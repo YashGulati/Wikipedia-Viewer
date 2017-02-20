@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="Yapp">
+  <head>
+    <title>Wikipedia Viewer</title>
+    <link rel="stylesheet" href="styles/style.css" charset="utf-8"/>
+  </head>
+  <body ng-controller="Ycontroller">
+    <div class="container">
+      <form ng-submit="submitted()">
+        <a type="button" id="random" href="http://en.wikipedia.org/wiki/Special:Random" target="_blank"> </a>
+        <input type="text" id="search" onblur="reset()" autocomplete="off"/>
+      </form>
+    </div>
+    <div ng-repeat="each in output" class="output"><a href="{{each.link}}" target="_blank">
+        <h1>{{each.title}}</h1>
+        <p>{{each.body}}</p></a></div>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js" ></script>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.min.js" ></script>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+    <script src=script.js></script>
+  </body>
+</html>
