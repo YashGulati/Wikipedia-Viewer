@@ -1,3 +1,4 @@
+var output;
 var input;
 var dataFlag = 0;
 angular.module("Yapp", [])
@@ -8,7 +9,7 @@ angular.module("Yapp", [])
       var url = 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=' + input + '&callback=JSON_CALLBACK';
       $http.jsonp(url)
       .success(function(data) {
-      var output = data.query.pages;
+      output = data.query.pages;
       angular.forEach(output, function(v,k)  {
         $scope.output.push({title: v.title, body: v.extract, link: 'https://en.wikipedia.org/?curid=' + v.pageid})
       });
